@@ -43,9 +43,9 @@ $.ajax(
         textosDeAbertura[filme.episode_id] = "Episode " + filme.episode_id + "\n" + filme.title.toUpperCase() + "\n\n" + filme.opening_crawl;
     }
 
-    if (sessionStorage.getItem('historico') != null)
+    if (localStorage.getItem('historico') != null)
       {
-        $("pre").html(textosDeAbertura[ sessionStorage.getItem('historico') ]);
+        $("pre").html(textosDeAbertura[ localStorage.getItem('historico') ]);
       }
         
     }
@@ -58,6 +58,6 @@ $('#movies').on('click', 'li', function(e)
         string = string.substring(7);
         $("pre").html(textosDeAbertura[string]);
 
-        sessionStorage.setItem('historico', string);
+        localStorage.setItem('historico', string);
     }
 );
